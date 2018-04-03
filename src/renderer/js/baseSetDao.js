@@ -19,7 +19,7 @@ export function readFromFile(filePath) {
   // 如果文件不存在,返回 undefined
   if (!fs.existsSync(filePath)) {
     // log.warn("cluster.ini文件不存在.路径" + filePath);
-    return undefined;
+    return 404;
   }
   // 基本设置
   let baseSet = new BaseSet();
@@ -32,7 +32,7 @@ export function readFromFile(filePath) {
   baseSet.describe = config.NETWORK.cluster_description || '';
   baseSet.gameMode = config.GAMEPLAY.game_mode || 'endless';
   baseSet.isPvP = config.GAMEPLAY.pvp || false;
-  baseSet.maxPlayers = config.GAMEPLAY.max_players || 5;
+  baseSet.maxPlayers = config.GAMEPLAY.max_players || 20;
   baseSet.secret = config.NETWORK.cluster_password || '';
   // 服务器模式 offline_cluster=true (true 是 离线 false 是在线)
   baseSet.serverMode = config.NETWORK.offline_cluster || false;

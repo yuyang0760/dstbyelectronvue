@@ -61,7 +61,6 @@
 import { readFromFile, writeFile } from '@/js/baseSetDao';
 import { BaseSet } from '@/js/baseSet';
 import Vue from 'vue';
-var baseset = readFromFile('@/resources/cluster.ini');
 
 let gamestyle_options = [
   { text: '交际', value: 'social' },
@@ -115,6 +114,15 @@ let iscave_options = [
 
 export default {
   name: 'first_page',
+  computed: {
+    baseset: function () {
+
+      let basesetRe = readFromFile('./src/renderer/resources/cluster.ini');
+      console.log(basesetRe);
+      return basesetRe;
+    }
+
+  },
   data: function () {
     return {
       // 属性直接赋值 初始值占位
@@ -148,74 +156,74 @@ export default {
   },
   // hook created
   created: function () {
-    this.housename = baseset.houseName;
-    this.password = baseset.secret;
-    this.description = baseset.describe;
+    this.housename = this.baseset.houseName;
+    this.password = this.baseset.secret;
+    this.description = this.baseset.describe;
 
     this.gamestyle_options = gamestyle_options;
-    this.gamestyle_selected = baseset.gameStyle;
+    this.gamestyle_selected = this.baseset.gameStyle;
 
     this.gamemode_options = gamemode_options;
-    this.gamemode_selected = baseset.gameMode;
+    this.gamemode_selected = this.baseset.gameMode;
 
     this.ispvp_options = ispvp_options;
-    this.ispvp_selected = baseset.isPvP;
+    this.ispvp_selected = this.baseset.isPvP;
 
     this.maxplayers_options = maxplayers_options;
-    this.maxplayers_selected = baseset.maxPlayers;
+    this.maxplayers_selected = this.baseset.maxPlayers;
 
     this.servermode_options = servermode_options;
-    this.servermode_selected = baseset.serverMode;
+    this.servermode_selected = this.baseset.serverMode;
 
     this.ispause_options = ispause_options;
-    this.ispause_selected = baseset.isPause;
+    this.ispause_selected = this.baseset.isPause;
 
     this.iscave_options = iscave_options;
-    this.iscave_selected = baseset.isCave;
+    this.iscave_selected = this.baseset.isCave;
   },
 
   methods: {
     // 事件,方法 计算属性用get +方法
     gamestyle_change: function () {
-      baseset.gameStyle = this.gamestyle_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.gameStyle = this.gamestyle_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     // 事件,方法 计算属性用get +方法
     gamemode_change: function () {
-      baseset.gameMode = this.gamemode_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.gameMode = this.gamemode_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     ispvp_change: function () {
-      baseset.isPvP = this.ispvp_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.isPvP = this.ispvp_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     maxplayers_change: function () {
-      baseset.maxPlayers = this.maxplayers_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.maxPlayers = this.maxplayers_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     servermode_change: function () {
-      baseset.serverMode = this.servermode_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.serverMode = this.servermode_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     ispause_change: function () {
-      baseset.isPause = this.ispause_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.isPause = this.ispause_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     iscave_change: function () {
-      baseset.isCave = this.iscave_selected;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.isCave = this.iscave_selected;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     housename_change: function () {
-      baseset.houseName = this.housename;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.houseName = this.housename;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     password_change: function () {
-      baseset.secret = this.password;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.secret = this.password;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     },
     description_change: function () {
-      baseset.describe = this.description;
-      writeFile('./resources/cluster1.ini', baseset);
+      this.baseset.describe = this.description;
+      writeFile('./src/resources/cluster1.ini', this.baseset);
     }
   }
 };
