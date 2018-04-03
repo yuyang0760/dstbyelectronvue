@@ -58,10 +58,10 @@
 </template>
 
 <script>
-import { readFromFile, writeFile } from './src/renderer/js/baseSetDao';
-import { BaseSet } from './src/renderer/js/baseSet';
+import { readFromFile, writeFile } from '@/js/baseSetDao.js';
+import { BaseSet } from '@/js/baseSet.js';
 import Vue from 'vue';
-var baseset = readFromFile('./src/renderer/resources/cluster.ini');
+var baseset = readFromFile('@/resources/cluster.ini');
 
 let gamestyle_options = [
   { text: '交际', value: 'social' },
