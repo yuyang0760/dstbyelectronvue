@@ -62,56 +62,6 @@ import { readFromFile, writeFile } from '@/js/baseSetDao';
 import { BaseSet } from '@/js/baseSet';
 import Vue from 'vue';
 
-let gamestyle_options = [
-  { text: '交际', value: 'social' },
-  { text: '合作', value: 'cooperative' },
-  { text: '竞争', value: 'competitive' },
-  { text: '疯狂', value: 'madness' }
-];
-let gamemode_options = [
-  { text: '无尽', value: 'endless' },
-  { text: '荒野', value: 'wilderness' },
-  { text: '生存', value: 'survival' }
-];
-let ispvp_options = [
-  { text: '是', value: 'true' },
-  { text: '否', value: 'false' }
-];
-let maxplayers_options = [
-  { text: '1', value: '1' },
-  { text: '2', value: '2' },
-  { text: '3', value: '3' },
-  { text: '4', value: '4' },
-  { text: '5', value: '5' },
-  { text: '6', value: '6' },
-  { text: '7', value: '7' },
-  { text: '8', value: '8' },
-  { text: '9', value: '9' },
-  { text: '10', value: '10' },
-  { text: '11', value: '11' },
-  { text: '12', value: '12' },
-  { text: '13', value: '13' },
-  { text: '14', value: '14' },
-  { text: '15', value: '15' },
-  { text: '16', value: '16' },
-  { text: '17', value: '17' },
-  { text: '18', value: '18' },
-  { text: '19', value: '19' },
-  { text: '20', value: '20' }
-];
-let servermode_options = [
-  { text: '在线', value: 'false' },
-  { text: '离线', value: 'true' }
-];
-let ispause_options = [
-  { text: '是', value: 'true' },
-  { text: '否', value: 'false' }
-];
-let iscave_options = [
-  { text: '是', value: 'true' },
-  { text: '否', value: 'false' }
-];
-
 export default {
   name: 'first_page',
   computed: {
@@ -156,29 +106,30 @@ export default {
   },
   // hook created
   created: function () {
+
     this.housename = this.baseset.houseName;
     this.password = this.baseset.secret;
     this.description = this.baseset.describe;
 
-    this.gamestyle_options = gamestyle_options;
+    this.gamestyle_options = this.baseset.gamestyle_options;
     this.gamestyle_selected = this.baseset.gameStyle;
 
-    this.gamemode_options = gamemode_options;
+    this.gamemode_options = this.baseset.gamemode_options;
     this.gamemode_selected = this.baseset.gameMode;
 
-    this.ispvp_options = ispvp_options;
+    this.ispvp_options = this.baseset.ispvp_options;
     this.ispvp_selected = this.baseset.isPvP;
 
-    this.maxplayers_options = maxplayers_options;
+    this.maxplayers_options = this.baseset.maxplayers_options;
     this.maxplayers_selected = this.baseset.maxPlayers;
 
-    this.servermode_options = servermode_options;
+    this.servermode_options = this.baseset.servermode_options;
     this.servermode_selected = this.baseset.serverMode;
 
-    this.ispause_options = ispause_options;
+    this.ispause_options = this.baseset.ispause_options;
     this.ispause_selected = this.baseset.isPause;
 
-    this.iscave_options = iscave_options;
+    this.iscave_options = this.baseset.iscave_options;
     this.iscave_selected = this.baseset.isCave;
   },
 

@@ -1,4 +1,4 @@
-
+import * as fs from 'fs-extra';
 /**
  * 基础设置类
  */
@@ -21,60 +21,38 @@ export class BaseSet {
         this.master_ip = '127.0.0.1';
         this.master_port = 10888;
         this.cluster_key = 'defaultPass';
+        // 设置option
+        let options = fs.readJSONSync('./src/renderer/resources/baseSet.json');
+        this.gamestyle_options = options.gamestyle_options;
+        this.gamemode_options = options.gamemode_options;
+        this.iscave_options = options.iscave_options;
+        this.ispause_options = options.ispause_options;
+        this.ispvp_options = options.ispvp_options;
+        this.servermode_options = options.servermode_options;
+        this.maxplayers_options = options.maxplayers_options;
     }
-    /**
-     * 房间名称
-     */
     houseName;
-    /**
-     * 描述
-     */
     describe;
-
-    /**
-     * 游戏风格
-     */
     gameStyle;
-
-    /**
-     * 服务器模式
-     */
+    gamestyle_options;
     serverMode;
-
-    /**
-     * 是否开启PVP
-     */
+    servermode_options;
     isPvP;
-
-    /**
-     * 最大人数
-     */
+    ispvp_options
     maxPlayers;
-
-    /**
-     * 密码
-     */
+    maxplayers_options;
     secret;
-
-    /**
-     * 游戏模式
-     */
     gameMode;
-
-    /**
-     * 是否无人时暂停
-     */
+    gamemode_options;
     isPause;
-
-    /**
-     * 是否开启洞穴
-     */
+    ispause_options;
     isCave;
-    lanOnlyCluster;
-    consoleEnabled;
-    shardEnabled;
-    bindIp;
-    masterIp;
-    masterPort;
-    clusterKey;
+    iscave_options;
+    lan_only_cluster;
+    console_enabled;
+    shard_enabled;
+    bind_ip;
+    master_ip;
+    master_port;
+    cluster_key;
 }

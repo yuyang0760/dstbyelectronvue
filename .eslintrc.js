@@ -27,7 +27,8 @@ module.exports = {
     'semi':0,
     'padded-blocks':0,
     'camelcase':0,
-    'no-unused-vars':0
+    'no-unused-vars':0,
+    'no-trailing-spaces':0
 
   }
 }
