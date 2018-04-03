@@ -1,0 +1,1017 @@
+{
+    "worldItems": {
+        "task_set": {
+            "ID": "task_set",
+            "pic": "./src/renderer/resources/worldPic/task_set",
+            "desc": "生物群系",
+            "defaultValue": "default",
+            "option": {
+                "classic": "经典",
+                "default": "默认"
+            },
+            "whichType": "World"
+        },
+        "start_location": {
+            "ID": "start_location",
+            "pic": "./src/renderer/resources/worldPic/start_location",
+            "desc": "出生区域",
+            "defaultValue": "default",
+            "option": {
+                "caves": "洞穴",
+                "default": "默认",
+                "plus": "增强",
+                "darkness": "黑暗的"
+            },
+            "whichType": "World"
+        },
+        "world_size": {
+            "ID": "world_size",
+            "pic": "./src/renderer/resources/worldPic/world_size",
+            "desc": "世界大小",
+            "defaultValue": "default",
+            "option": {
+                "small": "小",
+                "medium": "中等",
+                "default": "默认",
+                "huge": "巨大"
+            },
+            "whichType": "World"
+        },
+        "branching": {
+            "ID": "branching",
+            "pic": "./src/renderer/resources/worldPic/branching",
+            "desc": "分叉路",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "least": "最少",
+                "default": "默认",
+                "most": "大部分"
+            },
+            "whichType": "World"
+        },
+        "loop": {
+            "ID": "loop",
+            "pic": "./src/renderer/resources/worldPic/loop",
+            "desc": "环形路",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "default": "默认",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "autumn": {
+            "ID": "autumn",
+            "pic": "./src/renderer/resources/worldPic/autumn",
+            "desc": "秋季",
+            "defaultValue": "default",
+            "option": {
+                "noseason": "无",
+                "veryshortseason": "非常短",
+                "shortseason": "短",
+                "default": "默认",
+                "longseason": "长",
+                "verylongseason": "非常长",
+                "random": "随机"
+            },
+            "whichType": "World"
+        },
+        "winter": {
+            "ID": "winter",
+            "pic": "./src/renderer/resources/worldPic/winter",
+            "desc": "冬季",
+            "defaultValue": "default",
+            "option": {
+                "noseason": "无",
+                "veryshortseason": "非常短",
+                "shortseason": "短",
+                "default": "默认",
+                "longseason": "长",
+                "verylongseason": "非常长",
+                "random": "随机"
+            },
+            "whichType": "World"
+        },
+        "spring": {
+            "ID": "spring",
+            "pic": "./src/renderer/resources/worldPic/spring",
+            "desc": "春季",
+            "defaultValue": "default",
+            "option": {
+                "noseason": "无",
+                "veryshortseason": "非常短",
+                "shortseason": "短",
+                "default": "默认",
+                "longseason": "长",
+                "verylongseason": "非常长",
+                "random": "随机"
+            },
+            "whichType": "World"
+        },
+        "summer": {
+            "ID": "summer",
+            "pic": "./src/renderer/resources/worldPic/summer",
+            "desc": "夏季",
+            "defaultValue": "default",
+            "option": {
+                "noseason": "无",
+                "veryshortseason": "非常短",
+                "shortseason": "短",
+                "default": "默认",
+                "longseason": "长",
+                "verylongseason": "非常长",
+                "random": "随机"
+            },
+            "whichType": "World"
+        },
+        "season_start": {
+            "ID": "season_start",
+            "pic": "./src/renderer/resources/worldPic/season_start",
+            "desc": "开始季节",
+            "defaultValue": "default",
+            "option": {
+                "default": "默认",
+                "winter": "冬季",
+                "spring": "春季",
+                "summer": "夏季",
+                "autumnorspring": "春或秋",
+                "winterorsummer": "冬或夏",
+                "random": "随机"
+            },
+            "whichType": "World"
+        },
+        "day": {
+            "ID": "day",
+            "pic": "./src/renderer/resources/worldPic/day",
+            "desc": "时间设置",
+            "defaultValue": "default",
+            "option": {
+                "default": "默认",
+                "longday": "长白天",
+                "longdusk": "长夜晚",
+                "longnight": "长傍晚",
+                "noday": "无白天",
+                "nodusk": "nodusk",
+                "nonight": "nonight",
+                "onlyday": "onlyday",
+                "onlydusk": "onlydusk",
+                "onlynight": "onlynight"
+            },
+            "whichType": "World"
+        },
+        "weather": {
+            "ID": "weather",
+            "pic": "./src/renderer/resources/worldPic/weather",
+            "desc": "降雨",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "earthquakes": {
+            "ID": "earthquakes",
+            "pic": "./src/renderer/resources/worldPic/earthquakes",
+            "desc": "地震",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "lightning": {
+            "ID": "lightning",
+            "pic": "./src/renderer/resources/worldPic/lightning",
+            "desc": "闪电",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "frograin": {
+            "ID": "frograin",
+            "pic": "./src/renderer/resources/worldPic/frograin",
+            "desc": "青蛙雨",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "wildfires": {
+            "ID": "wildfires",
+            "pic": "./src/renderer/resources/worldPic/wildfires",
+            "desc": "自燃",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "touchstone": {
+            "ID": "touchstone",
+            "pic": "./src/renderer/resources/worldPic/touchstone",
+            "desc": "复活石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "regrowth": {
+            "ID": "regrowth",
+            "pic": "./src/renderer/resources/worldPic/regrowth",
+            "desc": "世界再生",
+            "defaultValue": "default",
+            "option": {
+                "veryslow": "极慢",
+                "slow": "慢",
+                "default": "默认",
+                "fast": "快",
+                "veryfast": "极快"
+            },
+            "whichType": "World"
+        },
+        "cavelight": {
+            "ID": "cavelight",
+            "pic": "./src/renderer/resources/worldPic/cavelight",
+            "desc": "洞穴透光",
+            "defaultValue": "default",
+            "option": {
+                "veryslow": "极慢",
+                "slow": "慢",
+                "default": "默认",
+                "fast": "快",
+                "veryfast": "极快"
+            },
+            "whichType": "World"
+        },
+        "boons": {
+            "ID": "boons",
+            "pic": "./src/renderer/resources/worldPic/boons",
+            "desc": "失败的幸存者",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "prefabswaps_start": {
+            "ID": "prefabswaps_start",
+            "pic": "./src/renderer/resources/worldPic/prefabswaps_start",
+            "desc": "开始资源种类",
+            "defaultValue": "default",
+            "option": {
+                "classic": "经典",
+                "default": "默认",
+                "highly random": "高度随机"
+            },
+            "whichType": "World"
+        },
+        "flowers": {
+            "ID": "flowers",
+            "pic": "./src/renderer/resources/worldPic/flowers",
+            "desc": "花&恶魔花",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "grass": {
+            "ID": "grass",
+            "pic": "./src/renderer/resources/worldPic/grass",
+            "desc": "草",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "sapling": {
+            "ID": "sapling",
+            "pic": "./src/renderer/resources/worldPic/sapling",
+            "desc": "小树枝",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "marshbush": {
+            "ID": "marshbush",
+            "pic": "./src/renderer/resources/worldPic/marshbush",
+            "desc": "荆棘丛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "tumbleweed": {
+            "ID": "tumbleweed",
+            "pic": "./src/renderer/resources/worldPic/tumbleweed",
+            "desc": "风滚草",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "reeds": {
+            "ID": "reeds",
+            "pic": "./src/renderer/resources/worldPic/reeds",
+            "desc": "芦苇",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "trees": {
+            "ID": "trees",
+            "pic": "./src/renderer/resources/worldPic/trees",
+            "desc": "树（所有种类）",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "flint": {
+            "ID": "flint",
+            "pic": "./src/renderer/resources/worldPic/flint",
+            "desc": "燧石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "rock": {
+            "ID": "rock",
+            "pic": "./src/renderer/resources/worldPic/rock",
+            "desc": "岩石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "rock_ice": {
+            "ID": "rock_ice",
+            "pic": "./src/renderer/resources/worldPic/rock_ice",
+            "desc": "小型冰川",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "meteorspawner": {
+            "ID": "meteorspawner",
+            "pic": "./src/renderer/resources/worldPic/meteorspawner",
+            "desc": "陨石生成区域",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "meteorshowers": {
+            "ID": "meteorshowers",
+            "pic": "./src/renderer/resources/worldPic/meteorshowers",
+            "desc": "陨石降落频率",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "berrybush": {
+            "ID": "berrybush",
+            "pic": "./src/renderer/resources/worldPic/berrybush",
+            "desc": "浆果丛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "carrot": {
+            "ID": "carrot",
+            "pic": "./src/renderer/resources/worldPic/carrot",
+            "desc": "萝卜",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "mushroom": {
+            "ID": "mushroom",
+            "pic": "./src/renderer/resources/worldPic/mushroom",
+            "desc": "蘑菇",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "cactus": {
+            "ID": "cactus",
+            "pic": "./src/renderer/resources/worldPic/cactus",
+            "desc": "仙人掌",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "rabbits": {
+            "ID": "rabbits",
+            "pic": "./src/renderer/resources/worldPic/rabbits",
+            "desc": "兔子",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "moles": {
+            "ID": "moles",
+            "pic": "./src/renderer/resources/worldPic/moles",
+            "desc": "鼹鼠",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "butterfly": {
+            "ID": "butterfly",
+            "pic": "./src/renderer/resources/worldPic/butterfly",
+            "desc": "蝴蝶",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "birds": {
+            "ID": "birds",
+            "pic": "./src/renderer/resources/worldPic/birds",
+            "desc": "鸟",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "buzzard": {
+            "ID": "buzzard",
+            "pic": "./src/renderer/resources/worldPic/buzzard",
+            "desc": "秃鹫",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "catcoon": {
+            "ID": "catcoon",
+            "pic": "./src/renderer/resources/worldPic/catcoon",
+            "desc": "浣猫",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "perd": {
+            "ID": "perd",
+            "pic": "./src/renderer/resources/worldPic/perd",
+            "desc": "火鸡",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "pigs": {
+            "ID": "pigs",
+            "pic": "./src/renderer/resources/worldPic/pigs",
+            "desc": "猪人",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "lightninggoat": {
+            "ID": "lightninggoat",
+            "pic": "./src/renderer/resources/worldPic/lightninggoat",
+            "desc": "电羊",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "beefalo": {
+            "ID": "beefalo",
+            "pic": "./src/renderer/resources/worldPic/beefalo",
+            "desc": "皮弗娄牛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "beefaloheat": {
+            "ID": "beefaloheat",
+            "pic": "./src/renderer/resources/worldPic/beefaloheat",
+            "desc": "皮弗娄牛发情频率",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "hunt": {
+            "ID": "hunt",
+            "pic": "./src/renderer/resources/worldPic/hunt",
+            "desc": "脚印",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "alternatehunt": {
+            "ID": "alternatehunt",
+            "pic": "./src/renderer/resources/worldPic/alternatehunt",
+            "desc": "狩猎惊喜",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "penguins": {
+            "ID": "penguins",
+            "pic": "./src/renderer/resources/worldPic/penguins",
+            "desc": "企鸥",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "cave_ponds": {
+            "ID": "cave_ponds",
+            "pic": "./src/renderer/resources/worldPic/cave_ponds",
+            "desc": "池塘",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "ponds": {
+            "ID": "ponds",
+            "pic": "./src/renderer/resources/worldPic/ponds",
+            "desc": "池塘",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "bees": {
+            "ID": "bees",
+            "pic": "./src/renderer/resources/worldPic/bees",
+            "desc": "蜜蜂",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "angrybees": {
+            "ID": "angrybees",
+            "pic": "./src/renderer/resources/worldPic/angrybees",
+            "desc": "杀人蜂",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "tallbirds": {
+            "ID": "tallbirds",
+            "pic": "./src/renderer/resources/worldPic/tallbirds",
+            "desc": "高鸟",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "spiders": {
+            "ID": "spiders",
+            "pic": "./src/renderer/resources/worldPic/spiders",
+            "desc": "蜘蛛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "hounds": {
+            "ID": "hounds",
+            "pic": "./src/renderer/resources/worldPic/hounds",
+            "desc": "猎犬突袭",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "houndmound": {
+            "ID": "houndmound",
+            "pic": "./src/renderer/resources/worldPic/houndmound",
+            "desc": "猎犬窝",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "merm": {
+            "ID": "merm",
+            "pic": "./src/renderer/resources/worldPic/merm",
+            "desc": "鱼人",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "tentacles": {
+            "ID": "tentacles",
+            "pic": "./src/renderer/resources/worldPic/tentacles",
+            "desc": "触手",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "chess": {
+            "ID": "chess",
+            "pic": "./src/renderer/resources/worldPic/chess",
+            "desc": "发条生物",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "lureplants": {
+            "ID": "lureplants",
+            "pic": "./src/renderer/resources/worldPic/lureplants",
+            "desc": "诱饵草",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "walrus": {
+            "ID": "walrus",
+            "pic": "./src/renderer/resources/worldPic/walrus",
+            "desc": "海象营地",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "liefs": {
+            "ID": "liefs",
+            "pic": "./src/renderer/resources/worldPic/liefs",
+            "desc": "树人守卫",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "deciduousmonster": {
+            "ID": "deciduousmonster",
+            "pic": "./src/renderer/resources/worldPic/deciduousmonster",
+            "desc": "毒桦树",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "krampus": {
+            "ID": "krampus",
+            "pic": "./src/renderer/resources/worldPic/krampus",
+            "desc": "坎普斯",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "bearger": {
+            "ID": "bearger",
+            "pic": "./src/renderer/resources/worldPic/bearger",
+            "desc": "熊獾",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "deerclops": {
+            "ID": "deerclops",
+            "pic": "./src/renderer/resources/worldPic/deerclops",
+            "desc": "独眼巨鹿",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "goosemoose": {
+            "ID": "goosemoose",
+            "pic": "./src/renderer/resources/worldPic/goosemoose",
+            "desc": "鹿角鹅",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "dragonfly": {
+            "ID": "dragonfly",
+            "pic": "./src/renderer/resources/worldPic/dragonfly",
+            "desc": "龙蝇",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "antliontribute": {
+            "ID": "antliontribute",
+            "pic": "./src/renderer/resources/worldPic/antliontribute",
+            "desc": "antliontribute",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        }
+    }
+}

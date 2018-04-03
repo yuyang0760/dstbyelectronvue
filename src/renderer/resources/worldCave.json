@@ -1,0 +1,610 @@
+{
+    "worldItems": {
+        "task_set": {
+            "ID": "task_set",
+            "pic": "./src/renderer/resources/worldPic/task_set",
+            "desc": "生物群系",
+            "defaultValue": "cave_default",
+            "option": {
+                "classic": "经典",
+                "cave_default": "默认"
+            },
+            "whichType": "World"
+        },
+        "start_location": {
+            "ID": "start_location",
+            "pic": "./src/renderer/resources/worldPic/start_location",
+            "desc": "出生区域",
+            "defaultValue": "default",
+            "option": {
+                "caves": "洞穴",
+                "default": "默认",
+                "plus": "增强",
+                "darkness": "黑暗的"
+            },
+            "whichType": "World"
+        },
+        "world_size": {
+            "ID": "world_size",
+            "pic": "./src/renderer/resources/worldPic/world_size",
+            "desc": "世界大小",
+            "defaultValue": "default",
+            "option": {
+                "small": "小",
+                "medium": "中等",
+                "default": "默认",
+                "huge": "巨大"
+            },
+            "whichType": "World"
+        },
+        "branching": {
+            "ID": "branching",
+            "pic": "./src/renderer/resources/worldPic/branching",
+            "desc": "分叉路",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "least": "最少",
+                "default": "默认",
+                "most": "大部分"
+            },
+            "whichType": "World"
+        },
+        "loop": {
+            "ID": "loop",
+            "pic": "./src/renderer/resources/worldPic/loop",
+            "desc": "环形路",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "default": "默认",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "weather": {
+            "ID": "weather",
+            "pic": "./src/renderer/resources/worldPic/weather",
+            "desc": "降雨",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "earthquakes": {
+            "ID": "earthquakes",
+            "pic": "./src/renderer/resources/worldPic/earthquakes",
+            "desc": "地震",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "lightning": {
+            "ID": "lightning",
+            "pic": "./src/renderer/resources/worldPic/lightning",
+            "desc": "闪电",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "frograin": {
+            "ID": "frograin",
+            "pic": "./src/renderer/resources/worldPic/frograin",
+            "desc": "青蛙雨",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "touchstone": {
+            "ID": "touchstone",
+            "pic": "./src/renderer/resources/worldPic/touchstone",
+            "desc": "复活石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "cavelight": {
+            "ID": "cavelight",
+            "pic": "./src/renderer/resources/worldPic/cavelight",
+            "desc": "洞穴透光",
+            "defaultValue": "default",
+            "option": {
+                "veryslow": "极慢",
+                "slow": "慢",
+                "default": "默认",
+                "fast": "快",
+                "veryfast": "极快"
+            },
+            "whichType": "World"
+        },
+        "boons": {
+            "ID": "boons",
+            "pic": "./src/renderer/resources/worldPic/boons",
+            "desc": "失败的幸存者",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "World"
+        },
+        "disease_delay": {
+            "ID": "disease_delay",
+            "pic": "./src/renderer/resources/worldPic/disease_delay",
+            "desc": "disease_delay",
+            "defaultValue": "default",
+            "option": {
+                "none": "无",
+                "random": "随机",
+                "long": "long",
+                "default": "默认",
+                "short": "short"
+            },
+            "whichType": "World"
+        },
+        "prefabswaps_start": {
+            "ID": "prefabswaps_start",
+            "pic": "./src/renderer/resources/worldPic/prefabswaps_start",
+            "desc": "开始资源种类",
+            "defaultValue": "default",
+            "option": {
+                "classic": "经典",
+                "default": "默认",
+                "highly random": "高度随机"
+            },
+            "whichType": "World"
+        },
+        "petrification": {
+            "ID": "petrification",
+            "pic": "./src/renderer/resources/worldPic/petrification",
+            "desc": "petrification",
+            "defaultValue": "default",
+            "option": {
+                "none": "无",
+                "few": "少",
+                "default": "默认",
+                "many": "多",
+                "max": "max"
+            },
+            "whichType": "World"
+        },
+        "grass": {
+            "ID": "grass",
+            "pic": "./src/renderer/resources/worldPic/grass",
+            "desc": "草",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "sapling": {
+            "ID": "sapling",
+            "pic": "./src/renderer/resources/worldPic/sapling",
+            "desc": "小树枝",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "marshbush": {
+            "ID": "marshbush",
+            "pic": "./src/renderer/resources/worldPic/marshbush",
+            "desc": "荆棘丛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "reeds": {
+            "ID": "reeds",
+            "pic": "./src/renderer/resources/worldPic/reeds",
+            "desc": "芦苇",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "trees": {
+            "ID": "trees",
+            "pic": "./src/renderer/resources/worldPic/trees",
+            "desc": "树（所有种类）",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "flint": {
+            "ID": "flint",
+            "pic": "./src/renderer/resources/worldPic/flint",
+            "desc": "燧石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "rock": {
+            "ID": "rock",
+            "pic": "./src/renderer/resources/worldPic/rock",
+            "desc": "岩石",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "mushtree": {
+            "ID": "mushtree",
+            "pic": "./src/renderer/resources/worldPic/mushtree",
+            "desc": "蘑菇树",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "fern": {
+            "ID": "fern",
+            "pic": "./src/renderer/resources/worldPic/fern",
+            "desc": "洞穴蕨菜",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "flower_cave": {
+            "ID": "flower_cave",
+            "pic": "./src/renderer/resources/worldPic/flower_cave",
+            "desc": "灯笼花",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "wormlights": {
+            "ID": "wormlights",
+            "pic": "./src/renderer/resources/worldPic/wormlights",
+            "desc": "发光浆果",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Resources"
+        },
+        "berrybush": {
+            "ID": "berrybush",
+            "pic": "./src/renderer/resources/worldPic/berrybush",
+            "desc": "浆果丛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "mushroom": {
+            "ID": "mushroom",
+            "pic": "./src/renderer/resources/worldPic/mushroom",
+            "desc": "蘑菇",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "banana": {
+            "ID": "banana",
+            "pic": "./src/renderer/resources/worldPic/banana",
+            "desc": "洞穴香蕉",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "lichen": {
+            "ID": "lichen",
+            "pic": "./src/renderer/resources/worldPic/lichen",
+            "desc": "苔藓",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Unprepared"
+        },
+        "cave_ponds": {
+            "ID": "cave_ponds",
+            "pic": "./src/renderer/resources/worldPic/cave_ponds",
+            "desc": "池塘",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "slurper": {
+            "ID": "slurper",
+            "pic": "./src/renderer/resources/worldPic/slurper",
+            "desc": "吞噬者",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "bunnymen": {
+            "ID": "bunnymen",
+            "pic": "./src/renderer/resources/worldPic/bunnymen",
+            "desc": "兔人",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "slurtles": {
+            "ID": "slurtles",
+            "pic": "./src/renderer/resources/worldPic/slurtles",
+            "desc": "龟壳蜗牛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "rocky": {
+            "ID": "rocky",
+            "pic": "./src/renderer/resources/worldPic/rocky",
+            "desc": "石虾",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "monkey": {
+            "ID": "monkey",
+            "pic": "./src/renderer/resources/worldPic/monkey",
+            "desc": "猴子",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Animals"
+        },
+        "cave_spiders": {
+            "ID": "cave_spiders",
+            "pic": "./src/renderer/resources/worldPic/cave_spiders",
+            "desc": "蜘蛛",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "tentacles": {
+            "ID": "tentacles",
+            "pic": "./src/renderer/resources/worldPic/tentacles",
+            "desc": "触手",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "chess": {
+            "ID": "chess",
+            "pic": "./src/renderer/resources/worldPic/chess",
+            "desc": "发条生物",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "liefs": {
+            "ID": "liefs",
+            "pic": "./src/renderer/resources/worldPic/liefs",
+            "desc": "树人守卫",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "bats": {
+            "ID": "bats",
+            "pic": "./src/renderer/resources/worldPic/bats",
+            "desc": "蝙蝠",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "fissure": {
+            "ID": "fissure",
+            "pic": "./src/renderer/resources/worldPic/fissure",
+            "desc": "梦魇裂缝",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "wormattacks": {
+            "ID": "wormattacks",
+            "pic": "./src/renderer/resources/worldPic/wormattacks",
+            "desc": "wormattacks",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        },
+        "worms": {
+            "ID": "worms",
+            "pic": "./src/renderer/resources/worldPic/worms",
+            "desc": "洞穴蠕虫",
+            "defaultValue": "default",
+            "option": {
+                "never": "无",
+                "rare": "较少",
+                "default": "默认",
+                "often": "较多",
+                "always": "大量"
+            },
+            "whichType": "Monsters"
+        }
+    }
+}
