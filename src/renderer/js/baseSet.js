@@ -14,13 +14,13 @@ export class BaseSet {
         this.gameMode = '';
         this.isPause = true;
         this.isCave = false;
-        this.lanOnlyCluster = true;
-        this.consoleEnabled = true;
-        this.shardEnabled = true;
-        this.bindIp = '127.0.0.1';
-        this.masterIp = '127.0.0.1';
-        this.masterPort = 10888;
-        this.clusterKey = 'defaultPass';
+        this.lan_only_cluster = true;
+        this.console_enabled = true;
+        this.shard_enabled = true;
+        this.bind_ip = '127.0.0.1';
+        this.master_ip = '127.0.0.1';
+        this.master_port = 10888;
+        this.cluster_key = 'defaultPass';
     }
     /**
      * 房间名称

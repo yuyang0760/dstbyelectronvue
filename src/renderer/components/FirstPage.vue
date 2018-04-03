@@ -186,44 +186,44 @@ export default {
     // 事件,方法 计算属性用get +方法
     gamestyle_change: function () {
       this.baseset.gameStyle = this.gamestyle_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     // 事件,方法 计算属性用get +方法
     gamemode_change: function () {
       this.baseset.gameMode = this.gamemode_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     ispvp_change: function () {
       this.baseset.isPvP = this.ispvp_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     maxplayers_change: function () {
       this.baseset.maxPlayers = this.maxplayers_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     servermode_change: function () {
       this.baseset.serverMode = this.servermode_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     ispause_change: function () {
       this.baseset.isPause = this.ispause_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     iscave_change: function () {
       this.baseset.isCave = this.iscave_selected;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     housename_change: function () {
       this.baseset.houseName = this.housename;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     password_change: function () {
       this.baseset.secret = this.password;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     },
     description_change: function () {
       this.baseset.describe = this.description;
-      writeFile('./src/resources/cluster1.ini', this.baseset);
+      writeFile('./src/renderer/resources/cluster1.ini', this.baseset);
     }
   }
 };
