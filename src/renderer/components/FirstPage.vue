@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import { readFromFile, writeFile } from '@/js/baseSetDao.js';
-import { BaseSet } from '@/js/baseSet.js';
+import { readFromFile, writeFile } from '@/js/baseSetDao';
+import { BaseSet } from '@/js/baseSet';
 import Vue from 'vue';
 var baseset = readFromFile('@/resources/cluster.ini');
 

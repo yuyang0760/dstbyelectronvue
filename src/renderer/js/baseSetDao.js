@@ -3,7 +3,7 @@
  *  2. 根据baseSet对象 修改cluster.ini文件
  */
 import * as ini from 'ini';
-import { BaseSet } from 'baseSet';
+import { BaseSet } from '@/js/baseSet';
 // import { util } from './util';
 import * as path from 'path';
 // import * as log from 'electron-log';
@@ -23,6 +23,7 @@ export function readFromFile(filePath) {
   }
   // 基本设置
   let baseSet = new BaseSet();
+
   // ini 解析
   var config = ini.parse(fs.readFileSync(filePath, 'utf-8'));
 
