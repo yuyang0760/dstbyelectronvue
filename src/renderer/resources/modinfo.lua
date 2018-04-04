@@ -23,14 +23,14 @@ configuration_options =
 
 	{
 		name = "IS_CHS_FIX_ALL",
---		label = "修复汉化",
---		hover = "修复某些未成功汉化的地方",
---		options =
---		{
---			{description = "开", data = true, hover = "开启修复汉化"},
---			{description = "关", data = false, hover = "关闭修复汉化"},
---		},
---		default = true,
+		label = "修复汉化",
+		hover = "修复某些未成功汉化的地方",
+		options =
+		{
+			{description = "开", data = true, hover = "开启修复汉化"},
+			{description = "关", data = false, hover = "关闭修复汉化"},
+		},
+		default = true,
 	},
 	{
 		name = "IS_CHS_ALL_MOD",

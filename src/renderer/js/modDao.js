@@ -20,12 +20,14 @@ import * as parser from 'luaparse';
 export function readFromFile_AllModInfo(modsFolderPath) {
 
     // 1 . 异步 读取modinfo所有mod的路径
-    let ModInfos = readAllModInfo(modsFolderPath);
-     console.log(ModInfos);
+    // let ModInfos = readAllModInfo(modsFolderPath);
+    //  console.log(ModInfos);
 
     // 2. 读取modoverride
 
-    return ModInfos;
+    // return ModInfos;
+
+    readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
 }
 
 /**
@@ -36,7 +38,7 @@ export function readFromFile_ModOverride(modOverridePath) {
     let modoverrides = {};
     let ast = parser.parse(fs.readFileSync(modOverridePath).toString());
     let itemsArr = ast['body'][0]['arguments'][0]['fields'];
-    
+
 }
 
 /**
@@ -129,73 +131,58 @@ export function readFromFile_modInfo(filePath) {
             config[0]['option'][0]['description'] = {}; 
         */
 
+    // 如果有configuration_options
     if ((map.get('configuration_options'))) {
- 
-        let coArr = map.get('configuration_options');
-        config = {};
-        // i 大项
-        for (let i = 0; i < coArr.length; i++) {
-            let itemConfigArr = coArr[i]['value']['fields'];
-            if (!Array.isArray(itemConfigArr)) {
-                continue;
-            }
-            config[i] = {};
 
-            // 1.把每一项先存到一个map中,  name = 'IS_CHS_FIX_ALL'
-            let itemMap = new Map();
-            for (let j = 0; j < itemConfigArr.length; j++) {
-                let itemkey = itemConfigArr[j]['key']['name'];
-                let itemvalue;
-                if (itemkey === 'options') {
-                    itemvalue = itemConfigArr[j]['value']['fields'];
-                } else {
-                    itemvalue = itemConfigArr[j]['value']['value'];
-                }
-                itemMap.set(itemkey, itemvalue);
+        // 首先先获得configuration_options的内容
+        let configuration_options = map.get('configuration_options');
+        // console.log(configuration_options);
+        // 遍历 configuration_options 中的每一项
+        for (let i = 0; i < configuration_options.length; i++) {
 
-                // 如果有option
-                if (itemkey === 'options') {
-                    let optionArr = itemMap.get('options');
-                    config[i]['options'] = {};
-                    if (!Array.isArray(optionArr)) {
-                        continue;
-                    }
-                    // 1.这里和 上面注释 i大项 是一样的
-                    for (let z = 0; z < optionArr.length; z++) {
-                        let itemOptionArr = optionArr[z]['value']['fields'];
-                        if (!Array.isArray(itemOptionArr)) {
-                            continue;
-                        }
-                        // 1.把每一项先存到一个map中, description = '开'
-                        // 2.遍历map,存到config中. t代表description,data这种小项
-                        let optionMap = new Map();
-                        for (let t = 0; t < itemOptionArr.length; t++) {
-                            let optionkey = itemOptionArr[t]['key']['name'];
-                            let optionvalue = itemOptionArr[t]['value']['value'];
-                            optionMap.set(optionkey, optionvalue);
-                        }
+            // 这个一个小项数组 一共4个
+            let smallItems = configuration_options[i]['value']['fields'];
 
-                        // 存到config的options中
+            // 这里定义一个用于储存name的值 ,遍历之后取出name值再赋值
+            let zhenshiName = '';
 
-                        config[i]['options'][z] = {};
-                        config[i]['options'][z]['description'] = optionMap.get('description') || '';
-                        config[i]['options'][z]['data'] = optionMap.get('data');
-                        config[i]['options'][z]['hover'] = optionMap.get('hover') || '';
+            // 遍历这个小项,先专门取出name值
+            for (let j = 0; j < smallItems.length; j++) {
 
-                    }
+                // 得到 name ,label,hover,default
+                const smallItem = smallItems[j];
+                let smallItemKey = smallItem['key']['name'];
+                if (smallItemKey === 'name') {
+                    // 如果是name这一项,赋值给zhenshiName
+                    zhenshiName = smallItem['value']['value'];
+                    break;
                 }
             }
-            // 存到config中
-            config[i]['name'] = itemMap.get('name');
-            config[i]['label'] = itemMap.get('label') || '';
-            config[i]['hover'] = itemMap.get('hover') || '';
-            config[i]['default'] = itemMap.get('default');
-            config[i]['curent'] = itemMap.get('default');
+
+            // 取出name值后,就可以写入config的第一项 config[name]
+            config[zhenshiName] = {};
+
+            // 再循环一次,填写各个项目,分是否是options
+            for (let j = 0; j < smallItems.length; j++) {
+
+                // 得到 name ,label,hover,default
+                const smallItem = smallItems[j];
+                let smallItemKey = smallItem['key']['name'];
+                if (smallItemKey !== 'options') {       // 如果不是options,赋值第二层
+                    config[zhenshiName][smallItemKey] = smallItem['value']['value'];
+                }
+                if (smallItemKey === 'options') {       // 如果是options,赋值一个空的options
+                    config[zhenshiName]['options'] = {};
+                    // 在解析options
+                    
+
+                }
+            }
+
         }
 
     }
+    console.log(config);
     modInfo.configuration_options = config;
-    // console.log(modInfo);
-    // console.log(modInfo);
     return modInfo;
 }
