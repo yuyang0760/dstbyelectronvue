@@ -4,8 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'landing-page',
       component: require('@/components/LandingPage').default
@@ -19,6 +18,11 @@ export default new Router({
       path: '/second_page',
       name: 'second_page',
       component: require('@/components/SecondPage.vue').default
+    },
+    {
+      path: '/mods_page',
+      name: 'mods_page',
+      component: require('@/components/ModsPage.vue').default
     },
     {
       path: '*',

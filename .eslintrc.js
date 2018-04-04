@@ -30,7 +30,7 @@ module.exports = {
     'no-unused-vars':0,
     'no-trailing-spaces':0,
     'no-control-regex':0,
-    'no-multi-spaces':0
-
+    'no-multi-spaces':0,
+'eol-last':0
   }
 }
