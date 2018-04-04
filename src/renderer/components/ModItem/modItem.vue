@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <img :src='modsrc+".png"' />
         <span>{{modname}}</span>
         <span>{{checked}}</span>
