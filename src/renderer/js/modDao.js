@@ -19,9 +19,9 @@ import * as parser from 'luaparse';
 export function readFromFile_AllModInfo(modsFolderPath) {
 
     // 1 . 异步 读取所有mod的路径
-    let allModInfo = readAllModInfo(modsFolderPath);
+    let ModInfos = readAllModInfo(modsFolderPath);
     // console.log(allModInfo);
-    return allModInfo;
+    return ModInfos;
 }
 
 /**
@@ -30,7 +30,7 @@ export function readFromFile_AllModInfo(modsFolderPath) {
  */
 function readAllModInfo(path) {
 
-    let allModInfo = [];
+    let ModInfos = [];
     fs.readdir(path, function (err, menu) {
         if (!menu) {
             return;
@@ -40,7 +40,7 @@ function readAllModInfo(path) {
                 if (info.isDirectory()) {
                     // console.log('=====================');
                     let modinfo = readFromFile_modInfo(path + '/' + ele + '/modinfo.lua');
-                    allModInfo.push(modinfo);
+                    ModInfos.push(modinfo);
                     // console.log('dir: ' + ele)
                     // console.log(modinfo);
                     // console.log('++++++++++++++++++++');
@@ -50,7 +50,7 @@ function readAllModInfo(path) {
         })
     })
 
-    return allModInfo;
+    return ModInfos;
 }
 
 /**

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <modItem :modname='modname'  :bchecked='true'></modItem>
+    <modItem :modname='modInfo.name' :bchecked='true' v-for="modInfo in modInfos" :key="modInfo.id"></modItem>
+    <!-- <div v-for='item in modInfos' :key='item.id'>{{item.name}}</div> -->
   </div>
 </template>
  
@@ -12,22 +13,20 @@ export default {
   name: 'mods_page',
   components: { modItem },
   methods: {
-    open(link) {
-      this.$electron.shell.openExternal(link);
-    }
+  },
+  computed: {
   },
   data: function () {
     return {
-      modname: '饥荒mod'
+      modInfos: []
     }
   },
   created: function () {
-
-    // let modinfo = readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
-    // console.log(modinfo);
+    // 1. 取出所有mod,来显示
     let modsFolderPath = 'I:\\Program Files (x86)\\Steam\\steamapps\\common\\Don\'t Starve Together\\mods';
-    let allModInfo = readFromFile_AllModInfo(modsFolderPath);
-    console.log(allModInfo);
+    this.modInfos = readFromFile_AllModInfo(modsFolderPath);
+    console.log(this.modInfos);
+
   }
 
 };
