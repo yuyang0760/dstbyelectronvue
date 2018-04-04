@@ -17,8 +17,8 @@ export default {
   components: { modItem },
   methods: {
     sendfoldername: function (foldername) {
-      console.log(modInfor);
-      console.log(foldername);
+      // console.log(modInfor);
+      // console.log(foldername);
     }
   },
   computed: {

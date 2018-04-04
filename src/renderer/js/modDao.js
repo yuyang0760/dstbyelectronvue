@@ -21,7 +21,7 @@ export function readFromFile_AllModInfo(modsFolderPath) {
 
     // 1 . 异步 读取所有mod的路径
     let ModInfos = readAllModInfo(modsFolderPath);
-    // console.log(allModInfo);
+     console.log(ModInfos);
     return ModInfos;
 }
 
@@ -106,26 +106,26 @@ export function readFromFile_modInfo(filePath) {
     // 这里面一层又一层啊啊啊啊啊啊啊
     let config = {};
     /*     
-            config['co'] = {};
+            config = {};
     
-            config['co'][0] = {};
-            config['co'][0]['name'] = {};
+            config[0] = {};
+            config[0]['name'] = {};
     
-            config['co'][0]['option'][0] = {};
-            config['co'][0]['option'][0]['description'] = {}; 
+            config[0]['option'][0] = {};
+            config[0]['option'][0]['description'] = {}; 
         */
 
     if ((map.get('configuration_options'))) {
 
         let coArr = map.get('configuration_options');
-        config['co'] = {};
+        config = {};
         // i 大项
         for (let i = 0; i < coArr.length; i++) {
             let itemConfigArr = coArr[i]['value']['fields'];
             if (!Array.isArray(itemConfigArr)) {
                 continue;
             }
-            config['co'][i] = {};
+            config[i] = {};
 
             // 1.把每一项先存到一个map中,  name = 'IS_CHS_FIX_ALL'
             let itemMap = new Map();
@@ -142,7 +142,7 @@ export function readFromFile_modInfo(filePath) {
                 // 如果有option
                 if (itemkey === 'options') {
                     let optionArr = itemMap.get('options');
-                    config['co'][i]['options'] = {};
+                    config[i]['options'] = {};
                     if (!Array.isArray(optionArr)) {
                         continue;
                     }
@@ -163,20 +163,20 @@ export function readFromFile_modInfo(filePath) {
 
                         // 存到config的options中
 
-                        config['co'][i]['options'][z] = {};
-                        config['co'][i]['options'][z]['description'] = optionMap.get('description') || '';
-                        config['co'][i]['options'][z]['data'] = optionMap.get('data');
-                        config['co'][i]['options'][z]['hover'] = optionMap.get('hover') || '';
+                        config[i]['options'][z] = {};
+                        config[i]['options'][z]['description'] = optionMap.get('description') || '';
+                        config[i]['options'][z]['data'] = optionMap.get('data');
+                        config[i]['options'][z]['hover'] = optionMap.get('hover') || '';
 
                     }
                 }
             }
             // 存到config中
-            config['co'][i]['name'] = itemMap.get('name');
-            config['co'][i]['label'] = itemMap.get('label') || '';
-            config['co'][i]['hover'] = itemMap.get('hover') || '';
-            config['co'][i]['default'] = itemMap.get('default');
-            config['co'][i]['curent'] = itemMap.get('default');
+            config[i]['name'] = itemMap.get('name');
+            config[i]['label'] = itemMap.get('label') || '';
+            config[i]['hover'] = itemMap.get('hover') || '';
+            config[i]['default'] = itemMap.get('default');
+            config[i]['curent'] = itemMap.get('default');
         }
 
     }
