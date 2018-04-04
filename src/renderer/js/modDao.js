@@ -130,7 +130,7 @@ export function readFromFile_modInfo(filePath) {
         */
 
     if ((map.get('configuration_options'))) {
-
+ 
         let coArr = map.get('configuration_options');
         config = {};
         // i 大项
