@@ -15,11 +15,11 @@ export default new Router({
       name: 'first_page',
       component: require('@/components/FirstPage.vue').default
     },
-    // {
-    //   path: '/second_page',
-    //   name: 'second_page',
-    //   component: require('@/components/SecondPage.vue').default
-    // },
+    {
+      path: '/second_page',
+      name: 'second_page',
+      component: require('@/components/SecondPage.vue').default
+    },
     {
       path: '*',
       redirect: '/'
