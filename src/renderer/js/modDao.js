@@ -13,6 +13,7 @@ import * as parser from 'luaparse';
 // };
 
 /**
+ * ModInfos是一个对象 {文件夹名字1:modInfo,文件夹名字2:modInfo}
  * 
  * @param {String} modsFolderPath :饥荒mods文件夹路径
  */
@@ -30,7 +31,7 @@ export function readFromFile_AllModInfo(modsFolderPath) {
  */
 function readAllModInfo(path) {
 
-    let ModInfos = [];
+    let ModInfos = {};
     fs.readdir(path, function (err, menu) {
         if (!menu) {
             return;
@@ -40,7 +41,7 @@ function readAllModInfo(path) {
                 if (info.isDirectory()) {
                     // console.log('=====================');
                     let modinfo = readFromFile_modInfo(path + '/' + ele + '/modinfo.lua');
-                    ModInfos.push(modinfo);
+                    ModInfos[ele] = modinfo;
                     // console.log('dir: ' + ele)
                     // console.log(modinfo);
                     // console.log('++++++++++++++++++++');

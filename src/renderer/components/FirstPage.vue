@@ -56,7 +56,7 @@
     </div>
   </div>
 </template>
-
+//  ==========================  template ↑ script ↓ ==============================================
 <script>
 import { readFromFile, writeFile } from '@/js/baseSetDao';
 import { BaseSet } from '@/js/baseSet';

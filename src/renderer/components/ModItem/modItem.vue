@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div @click="sendfoldername">
         <img :src='modsrc+".png"' />
         <span>{{modname}}</span>
         <span>{{checked}}</span>
@@ -7,16 +7,18 @@
         <input type='checkbox' v-model='checked' />
     </div>
 </template>
-
+//  ==========================  template ↑ script ↓ ==============================================
 <script>
 
 export default {
     name: 'moditem_page',
     methods: {
-
+        sendfoldername: function () {
+            this.$emit('foldername', this.foldername)
+        }
     },
     computed: {
- 
+
     },
     data: function () {
         return {
@@ -27,7 +29,8 @@ export default {
         modname: String,
         configsrc: String,
         modsrc: String,
-        bchecked: Boolean
+        bchecked: Boolean,
+        foldername: String
     }
 };
 </script>
