@@ -1,8 +1,9 @@
-/* export class ModInfo {
-    constructor() {
+/* AllModInfo {
+    [index:String]: ModInfo       // 文件夹名字
 
-    }
+} */
 
+/* export interface ModInfo {
     name;
     forumthread;
     author;
@@ -17,11 +18,10 @@
     all_clients_require_mod;
     client_only_mod;
     icon;
-
     configuration_options; // configuration_options 类型
 
-}
-export interface configuration_options {
+} */
+/* export interface configuration_options {
 
     co: {
         [index: number]: {
@@ -39,4 +39,4 @@ export interface configuration_options {
             }
         }
     }
-} */
+}  */

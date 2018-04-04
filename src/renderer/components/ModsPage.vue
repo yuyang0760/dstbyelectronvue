@@ -6,7 +6,7 @@
  
 <script>
 import modItem from './ModItem/modItem.vue';
-import { readFromFile_modInfo } from '@/js/modDao';
+import { readFromFile_modInfo, readFromFile_AllModInfo } from '@/js/modDao';
 
 export default {
   name: 'mods_page',
@@ -23,8 +23,11 @@ export default {
   },
   created: function () {
 
-    let modinfo = readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
-    console.log(modinfo);
+    // let modinfo = readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
+    // console.log(modinfo);
+    let modsFolderPath = 'I:\\Program Files (x86)\\Steam\\steamapps\\common\\Don\'t Starve Together\\mods';
+    let allModInfo = readFromFile_AllModInfo(modsFolderPath);
+    console.log(allModInfo);
   }
 
 };

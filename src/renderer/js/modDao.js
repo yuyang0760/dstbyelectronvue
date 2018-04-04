@@ -13,8 +13,49 @@ import * as parser from 'luaparse';
 // };
 
 /**
+ * 
+ * @param {String} modsFolderPath :饥荒mods文件夹路径
+ */
+export function readFromFile_AllModInfo(modsFolderPath) {
+
+    // 1 . 异步 读取所有mod的路径
+    let allModInfo = readAllModInfo(modsFolderPath);
+    // console.log(allModInfo);
+    return allModInfo;
+}
+
+/**
+ * 异步读取,这应该是异步吧
+ * @param {String} path mods文件路径 
+ */
+function readAllModInfo(path) {
+
+    let allModInfo = [];
+    fs.readdir(path, function (err, menu) {
+        if (!menu) {
+            return;
+        }
+        menu.forEach(function (ele) {
+            fs.stat(path + '/' + ele, function (err, info) {
+                if (info.isDirectory()) {
+                    // console.log('=====================');
+                    let modinfo = readFromFile_modInfo(path + '/' + ele + '/modinfo.lua');
+                    allModInfo.push(modinfo);
+                    // console.log('dir: ' + ele)
+                    // console.log(modinfo);
+                    // console.log('++++++++++++++++++++');
+
+                }
+            })
+        })
+    })
+
+    return allModInfo;
+}
+
+/**
  * 读取modinfo.lua存到自定义接口类型 ModInfo中
- * @param filePath modinfo.lua地址
+ * @param {String} filePath modinfo.lua地址
  */
 export function readFromFile_modInfo(filePath) {
 
@@ -22,22 +63,25 @@ export function readFromFile_modInfo(filePath) {
 
     // 1.前面简单的lua字符串
     var ast = parser.parse(fs.readFileSync(filePath).toString());
-    console.log(ast);
+    // console.log(ast);
     let modInfoItem = ast['body'];
     let map = new Map();
     modInfoItem.forEach(element => {
-        let key = element['variables'][0]['name'];
-        let value;
+        // 如果不存在 直接跳到下一个循环
+        if (Array.isArray(element['variables'])) {
 
-        if (key === 'configuration_options') {
+            let key = element['variables'][0]['name'];
+            let value;
 
-            value = element['init'][0]['fields'];
-        } else {
-            value = element['init'][0]['value'];
+            if (key === 'configuration_options') {
+
+                value = element['init'][0]['fields'];
+            } else {
+                value = element['init'][0]['value'];
+            }
+
+            map.set(key, value);
         }
-
-        map.set(key, value);
-
     });
 
     // 2.赋值
@@ -61,14 +105,14 @@ export function readFromFile_modInfo(filePath) {
     // 这里面一层又一层啊啊啊啊啊啊啊
     let config = {};
     /*     
-        config['co'] = {};
+            config['co'] = {};
     
-        config['co'][0] = {};
-        config['co'][0]['name'] = {};
+            config['co'][0] = {};
+            config['co'][0]['name'] = {};
     
-        config['co'][0]['option'][0] = {};
-        config['co'][0]['option'][0]['description'] = {}; 
-    */
+            config['co'][0]['option'][0] = {};
+            config['co'][0]['option'][0]['description'] = {}; 
+        */
 
     if ((map.get('configuration_options'))) {
 
@@ -77,6 +121,9 @@ export function readFromFile_modInfo(filePath) {
         // i 大项
         for (let i = 0; i < coArr.length; i++) {
             let itemConfigArr = coArr[i]['value']['fields'];
+            if (!Array.isArray(itemConfigArr)) {
+                continue;
+            }
             config['co'][i] = {};
 
             // 1.把每一项先存到一个map中,  name = 'IS_CHS_FIX_ALL'
@@ -94,12 +141,16 @@ export function readFromFile_modInfo(filePath) {
                 // 如果有option
                 if (itemkey === 'options') {
                     let optionArr = itemMap.get('options');
-
                     config['co'][i]['options'] = {};
+                    if (!Array.isArray(optionArr)) {
+                        continue;
+                    }
                     // 1.这里和 上面注释 i大项 是一样的
                     for (let z = 0; z < optionArr.length; z++) {
                         let itemOptionArr = optionArr[z]['value']['fields'];
-
+                        if (!Array.isArray(itemOptionArr)) {
+                            continue;
+                        }
                         // 1.把每一项先存到一个map中, description = '开'
                         // 2.遍历map,存到config中. t代表description,data这种小项
                         let optionMap = new Map();
@@ -130,6 +181,6 @@ export function readFromFile_modInfo(filePath) {
     }
     modInfo.configuration_options = config;
     // console.log(modInfo);
-    console.log(modInfo);
+    // console.log(modInfo);
     return modInfo;
 }
