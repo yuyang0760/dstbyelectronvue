@@ -19,10 +19,24 @@ import * as parser from 'luaparse';
  */
 export function readFromFile_AllModInfo(modsFolderPath) {
 
-    // 1 . 异步 读取所有mod的路径
+    // 1 . 异步 读取modinfo所有mod的路径
     let ModInfos = readAllModInfo(modsFolderPath);
      console.log(ModInfos);
+
+    // 2. 读取modoverride
+
     return ModInfos;
+}
+
+/**
+ * 读取modoverride的值
+ * @param {String} modOverridePath  
+ */
+export function readFromFile_ModOverride(modOverridePath) {
+    let modoverrides = {};
+    let ast = parser.parse(fs.readFileSync(modOverridePath).toString());
+    let itemsArr = ast['body'][0]['arguments'][0]['fields'];
+    
 }
 
 /**
@@ -63,7 +77,7 @@ export function readFromFile_modInfo(filePath) {
     let modInfo = {};
 
     // 1.前面简单的lua字符串
-    var ast = parser.parse(fs.readFileSync(filePath).toString());
+    let ast = parser.parse(fs.readFileSync(filePath).toString());
     // console.log(ast);
     let modInfoItem = ast['body'];
     let map = new Map();

@@ -7,7 +7,7 @@
 //  ==========================  template ↑ script ↓ ==============================================
 <script>
 import modItem from './ModItem/modItem.vue';
-import { readFromFile_modInfo, readFromFile_AllModInfo } from '@/js/modDao';
+import { readFromFile_AllModInfo, readFromFile_ModOverride } from '@/js/modDao';
 
 let modsFolderPath = 'I:\\Program Files (x86)\\Steam\\steamapps\\common\\Don\'t Starve Together\\mods';
 let modInfor = readFromFile_AllModInfo(modsFolderPath);
@@ -29,7 +29,7 @@ export default {
     }
   },
   created: function () {
-
+    readFromFile_ModOverride('./src/renderer/resources/modoverrides.lua')
   }
 
 };
