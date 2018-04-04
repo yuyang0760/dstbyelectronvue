@@ -20,14 +20,14 @@ import * as parser from 'luaparse';
 export function readFromFile_AllModInfo(modsFolderPath) {
 
     // 1 . 异步 读取modinfo所有mod的路径
-    // let ModInfos = readAllModInfo(modsFolderPath);
-    //  console.log(ModInfos);
+    let ModInfos = readAllModInfo(modsFolderPath);
+    console.log(ModInfos);
 
     // 2. 读取modoverride
 
     // return ModInfos;
 
-    readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
+    // readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
 }
 
 /**
@@ -140,13 +140,16 @@ export function readFromFile_modInfo(filePath) {
         // 遍历 configuration_options 中的每一项
         for (let i = 0; i < configuration_options.length; i++) {
 
-            // 这个一个小项数组 一共4个
+            // 这个一个小项数组 测试中的这个一共4个
             let smallItems = configuration_options[i]['value']['fields'];
 
             // 这里定义一个用于储存name的值 ,遍历之后取出name值再赋值
             let zhenshiName = '';
 
             // 遍历这个小项,先专门取出name值
+            if (!Array.isArray(smallItems)) {
+                continue;
+            }
             for (let j = 0; j < smallItems.length; j++) {
 
                 // 得到 name ,label,hover,default
@@ -168,21 +171,46 @@ export function readFromFile_modInfo(filePath) {
                 // 得到 name ,label,hover,default
                 const smallItem = smallItems[j];
                 let smallItemKey = smallItem['key']['name'];
-                if (smallItemKey !== 'options') {       // 如果不是options,赋值第二层
+                if (smallItemKey !== 'options') { // 如果不是options,赋值第二层
                     config[zhenshiName][smallItemKey] = smallItem['value']['value'];
                 }
-                if (smallItemKey === 'options') {       // 如果是options,赋值一个空的options
+                if (smallItemKey === 'options') { // 如果是options,赋值一个空的options
                     config[zhenshiName]['options'] = {};
-                    // 在解析options
-                    
+                    // 在解析options 
+                    // 首先 先获得options的内容
+                    let options = smallItem['value']['fields'];
 
+                    // 然后遍历这个options,取出每一项      options 像下面这样
+                    // {description = "开", data = true, hover = "开启修复汉化"},
+                    // { description = "关", data = false, hover = "关闭修复汉化" },
+                    if (!Array.isArray(options)) {
+                        continue;
+                    }
+                    for (let z = 0; z < options.length; z++) {
+                        config[zhenshiName]['options'][z] = {};
+                        // optionsItems => {description = "开", data = true, hover = "开启修复汉化"},
+                        const optionsItems = options[z];
+                        // console.log(optionsItems);
+                        // 再遍历 optionsItems 取出  description data hover 等
+                        if (!Array.isArray(optionsItems['value']['fields'])) {
+                            continue;
+                        }
+                        for (let h = 0; h < optionsItems['value']['fields'].length; h++) {
+                            const optionSmallItems = optionsItems['value']['fields'][h];
+
+                            // 赋值
+                            config[zhenshiName]['options'][z][optionSmallItems['key']['name']] = optionSmallItems['value']['value'];
+
+                        }
+
+                    }
                 }
             }
 
         }
 
     }
-    console.log(config);
+    // console.log(config);
     modInfo.configuration_options = config;
     return modInfo;
 }
