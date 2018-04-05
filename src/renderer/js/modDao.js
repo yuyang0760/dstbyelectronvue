@@ -11,62 +11,76 @@ import * as parser from 'luaparse';
 //     readFromFile_modInfo(filePath);
 
 // };
-
-/**
- * ModInfos是一个对象 {文件夹名字1:modInfo,文件夹名字2:modInfo}
- * 
- * @param {String} modsFolderPath :饥荒mods文件夹路径
- */
-export function readFromFile_AllModInfo(modsFolderPath) {
-
-    // 1 . 异步 读取modinfo所有mod的路径
-    let ModInfos = readAllModInfo(modsFolderPath);
-    console.log(ModInfos);
-
-    // 2. 读取modoverride
-
-    // return ModInfos;
-
-    // readFromFile_modInfo('./src/renderer/resources/modinfo.lua');
-}
-
 /**
  * 读取modoverride的值
  * @param {String} modOverridePath  
  */
-export function readFromFile_ModOverride(modOverridePath) {
-    let modoverrides = {};
+export function readFromFile_ModOverride(modOverridePath, modsFolderPath) {
+
+    // 1 .读取modinfo所有mod的路径 (读取所有mod文件用异步更好,可是不会啊)
+    let ModInfos = readAllModInfo(modsFolderPath);
+
+    // 2,遍历modoverrides 填写
+
     let ast = parser.parse(fs.readFileSync(modOverridePath).toString());
     let itemsArr = ast['body'][0]['arguments'][0]['fields'];
+    // console.log(itemsArr);
+    //  itemsArr  modoverrides中的很多项
+    for (let i = 0; i < itemsArr.length; i++) {
+        // element =>  ["workshop-350811795"]={ configuration_options={  }, enabled=true },
+        const element = itemsArr[i];
+        // 文件夹名
+        let folderName = element['key']['value'];
+        let configuration_options_or_enabled_Arr = element['value']['fields'];
+        for (let j = 0; j < configuration_options_or_enabled_Arr.length; j++) {
+            // elementConfig => configuration_options={  }, enabled=true
+            const elementConfig = configuration_options_or_enabled_Arr[j];
 
-}
+            // 如果是enabled
+            if (elementConfig['key']['name'] === 'enabled') {
+                // ModInfos[folderName]['enabled'] = {};
+                ModInfos[folderName]['enabled'] = elementConfig['value']['value'];
+            }
+            // 如果是configuration_options
+            if (elementConfig['key']['name'] === 'configuration_options') {
+                // ENABLEPINGS=true, FIREOPTIONS = 2,
+                let configuration_optionsArr = elementConfig['value']['fields'];
+                for (let z = 0; z < configuration_optionsArr.length; z++) {
+                    // onfiguration_optionsItem  ===>  ENABLEPINGS = true,
+                    const onfiguration_optionsItem = configuration_optionsArr[z];
+                    // onfiguration_optionsItem['key']['name'];
+                    // onfiguration_optionsItem['value']['value'];
 
-/**
- * 异步读取,这应该是异步吧
- * @param {String} path mods文件路径 
- */
-function readAllModInfo(path) {
-
-    let ModInfos = {};
-    fs.readdir(path, function (err, menu) {
-        if (!menu) {
-            return;
-        }
-        menu.forEach(function (ele) {
-            fs.stat(path + '/' + ele, function (err, info) {
-                if (info.isDirectory()) {
-                    // console.log('=====================');
-                    let modinfo = readFromFile_modInfo(path + '/' + ele + '/modinfo.lua');
-                    ModInfos[ele] = modinfo;
-                    // console.log('dir: ' + ele)
-                    // console.log(modinfo);
-                    // console.log('++++++++++++++++++++');
+                    // 给modinfos 下的 configuration_options 赋值 把current赋值进去
+                    let modInfo_configuration_optionsItems = ModInfos[folderName]['configuration_options'][onfiguration_optionsItem['key']['name']];
+                    // console.log(linshi);
+                    if (modInfo_configuration_optionsItems === undefined) {
+                        continue;
+                    }
+                    modInfo_configuration_optionsItems['current'] = onfiguration_optionsItem['value']['value'];
 
                 }
-            })
-        })
-    })
 
+            }
+
+        }
+
+    }
+    // console.log(ModInfos);
+    return ModInfos;
+}
+
+function readAllModInfo(path) {
+    let ModInfos = {};
+    let pa = fs.readdirSync(path);
+    pa.forEach(function (ele, index) {
+        let info = fs.statSync(path + '/' + ele)
+        if (info.isDirectory()) {
+            // console.log("dir: " + ele)
+            let modinfo = readFromFile_modInfo(path + '/' + ele + '/modinfo.lua');
+            ModInfos[ele] = modinfo;
+        }
+    })
     return ModInfos;
 }
 
@@ -116,7 +130,7 @@ export function readFromFile_modInfo(filePath) {
     modInfo.all_clients_require_mod = map.get('all_clients_require_mod') || false;
     modInfo.client_only_mod = map.get('client_only_mod') || false;
     modInfo.icon = map.get('icon') || '';
-
+    modInfo.enabled = false;
     // 3. configuration_options
     // 如果有 configuration_options
     // 这里面一层又一层啊啊啊啊啊啊啊
@@ -164,7 +178,7 @@ export function readFromFile_modInfo(filePath) {
 
             // 取出name值后,就可以写入config的第一项 config[name]
             config[zhenshiName] = {};
-
+            config[zhenshiName]['current'] = '';
             // 再循环一次,填写各个项目,分是否是options
             for (let j = 0; j < smallItems.length; j++) {
 
@@ -172,6 +186,9 @@ export function readFromFile_modInfo(filePath) {
                 const smallItem = smallItems[j];
                 let smallItemKey = smallItem['key']['name'];
                 if (smallItemKey !== 'options') { // 如果不是options,赋值第二层
+                    if (smallItemKey === 'default') {
+                        config[zhenshiName]['current'] = smallItem['value']['value'];
+                    }
                     config[zhenshiName][smallItemKey] = smallItem['value']['value'];
                 }
                 if (smallItemKey === 'options') { // 如果是options,赋值一个空的options

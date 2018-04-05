@@ -2,7 +2,7 @@
     <div @click="sendfoldername">
         <img :src='modsrc+".png"' />
         <span>{{modname}}</span>
-        <span>{{checked}}</span>
+        <span>{{checked?'启用':'禁用'}}</span>
         <img :src='configsrc' v-show='true' />
         <input type='checkbox' v-model='checked' />
     </div>
