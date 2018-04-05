@@ -3,7 +3,7 @@
         <img :src='modsrc+".png"' />
         <span>{{modname}}</span>
         <span>{{checked?'启用':'禁用'}}</span>
-        <img :src='configsrc' v-show='true' />
+        <img :src='configsrc+".png"' v-show='showconfigpic' />
         <input type='checkbox' v-model='checked' />
     </div>
 </template>
@@ -30,7 +30,8 @@ export default {
         configsrc: String,
         modsrc: String,
         bchecked: Boolean,
-        foldername: String
+        foldername: String,
+        showconfigpic: Boolean
     }
 };
 </script>
