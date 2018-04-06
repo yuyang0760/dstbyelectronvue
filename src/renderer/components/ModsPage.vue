@@ -33,7 +33,7 @@ import { readFromFile_ModOverride } from '@/js/modDao';
 let modsFolderPath = 'I:\\Program Files (x86)\\Steam\\steamapps\\common\\Don\'t Starve Together\\mods';
 let modInfos = readFromFile_ModOverride('./src/renderer/resources/modoverrides.lua', modsFolderPath);
 
-console.log(modInfos);
+// console.log(modInfos);
 
 export default {
   name: 'mods_page',

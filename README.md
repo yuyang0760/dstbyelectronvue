@@ -2,6 +2,14 @@
 
 > An electron-vue project
 
+不会做的原因:
+
+做到读取mod的configuration_options部分,发现用luaparse读取,如果 configuration_options 有在外面定义的东西 会读取不出来
+
+这样导致有一些mod的 configuration_options 不能正常显示了
+
+还没有学会其他读取lua的方法!!!
+
 #### Build Setup
 
 ``` bash
